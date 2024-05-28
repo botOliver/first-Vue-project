@@ -3,6 +3,7 @@ import { ref, computed } from 'vue'
 import NameInput from './components/new components/NameInput.vue'
 import SurNameInput from './components/new components/SurNameInput.vue'
 import EmailInput from './components/new components/EmailInput.vue'
+import EmailInput2 from './components/new components/EmailInput.vue'
 import PhoneInput from './components/new components/PhoneInput.vue'
 </script>
 
@@ -13,6 +14,7 @@ import PhoneInput from './components/new components/PhoneInput.vue'
         <NameInput />
         <SurNameInput />
         <EmailInput />
+        <EmailInput2 />
         <PhoneInput />
 
         <span class="characteristics"><strong>Укажите необходимые характеристики:</strong></span>
