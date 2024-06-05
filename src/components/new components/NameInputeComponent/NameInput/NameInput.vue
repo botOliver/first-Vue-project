@@ -1,19 +1,18 @@
 <script setup lang="ts">
-import NameInput from './NameInput/NameInput.vue';
 import { reactive, ref } from 'vue'
 
 const isInvalidName = ref(false)
 
 const fieldsOfForm = reactive({
   firstName: {
-    value: '',
+    value: '', //выступаает как false потому что пустая строка
     error: false
   }
 })
 
 
 
-const checkField = (fieldName: string, value: boolean = false): void => {
+const checkField = (fieldName: string, value: boolean = false ): void => {
   fieldsOfForm[fieldName].error = !value;
   isInvalidName.value = fieldsOfForm[fieldName].error
 }
@@ -26,11 +25,14 @@ const resetError = (fieldName: string): void => {
 // Когда мы используем квадратные скобки для доступа к свойству объекта, 
 // имя свойства обычно указывается в кавычках, чтобы JavaScript понимал, 
 // что это имя свойства, а не переменная или что-то ещё.
+
+//@blur="checkField('firstName', fieldsOfForm.firstName.value)" удалил value
 </script>
 
 <template>
 
 
+  
   <div id="error_name" v-if="fieldsOfForm.firstName.error" class="red-text">
     Пожалуйста, введите правильное имя
   </div>

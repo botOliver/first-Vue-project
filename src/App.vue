@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import NameInputApp from './components/new components/NameInputeComponent/NameInputApp.vue'
-import SurNameInput from './components/new components/SurNameInput.vue'
+import SurNameInputApp from './components/new components/SurNameInputComponent/SurNameInput.vue'
 import EmailInput from './components/new components/EmailInput.vue'
-import PhoneInput from './components/new components/PhoneInput.vue'
+import PhoneInputApp from './components/new components/PhoneInputComponent/PhoneInput.vue'
 </script>
 
 <template>
@@ -11,9 +11,9 @@ import PhoneInput from './components/new components/PhoneInput.vue'
     <div class="main">
       <form action="" method="get" class="form-example" id="form-example">
         <NameInputApp />
-        <SurNameInput />
+        <SurNameInputApp />
         <EmailInput />
-        <PhoneInput />
+        <PhoneInputApp />
 
         <span class="characteristics"><strong>Укажите необходимые характеристики:</strong></span>
 
