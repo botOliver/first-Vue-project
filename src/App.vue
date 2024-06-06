@@ -1,19 +1,49 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import NameInputApp from './components/new components/NameInputeComponent/NameInputApp.vue'
-import SurNameInputApp from './components/new components/SurNameInputComponent/SurNameInput.vue'
-import EmailInput from './components/new components/EmailInput.vue'
-import PhoneInputApp from './components/new components/PhoneInputComponent/PhoneInput.vue'
+// import { RouterLink, RouterView } from 'vue-router'
+// import HelloWorld from './components/HelloWorld.vue'
+import LeftColumn from './components/new components/LeftColumn.vue'
+import MainInfromation from './components/new components/MainInfromation.vue'
+import { ref } from 'vue'
+
+const inputvalue = ref('')
+const checkvalue = ref([])
 </script>
 
 <template>
   <div class="body_class">
     <div class="main">
       <form action="" method="get" class="form-example" id="form-example">
-        <NameInputApp />
-        <SurNameInputApp />
-        <EmailInput />
-        <PhoneInputApp />
+        <div id="error_name"></div>
+
+        <div class="form_input">
+          <label for="first_name">Имя:*</label>
+          <input type="text" placeholder="Иван" id="first_name" style="width: 300px" />
+        </div>
+
+        <div id="error_surname"></div>
+
+        <div class="form_input">
+          <label for="surname">Фамилия:*</label>
+          <input type="text" placeholder="Иванов" id="surname" style="width: 300px" />
+        </div>
+
+        <div class="form_input">
+          <label for="email">Email:</label>
+          <input type="email" placeholder="i.ivanov@mail.ru" id="email" style="width: 300px" />
+        </div>
+
+        <div id="error_phone"></div>
+
+        <div class="form_input">
+          <label for="phone">Телефон:*</label>
+          <input
+            type="tel"
+            placeholder="+7 000 000-00-00"
+            id="phone"
+            maxlength="21"
+            style="width: 300px"
+          />
+        </div>
 
         <span class="characteristics"><strong>Укажите необходимые характеристики:</strong></span>
 
@@ -29,10 +59,10 @@ import PhoneInputApp from './components/new components/PhoneInputComponent/Phone
         <div class="list_values">
           <label for="power">Мощность</label>
           <select id="power" style="width: 300px">
-            <option value="poni_1">1 сила</option>
-            <option value="poni_4" selected>4 силы</option>
-            <option value="poni_125">125 сил</option>
-            <option value="max_poni_500">500 сил</option>
+            <option value="poni_1">1 пони</option>
+            <option value="poni_4" selected>4 пони</option>
+            <option value="poni_125">125 пони</option>
+            <option value="max_poni_500">500 пони</option>
           </select>
         </div>
 
@@ -54,24 +84,14 @@ import PhoneInputApp from './components/new components/PhoneInputComponent/Phone
 
         <div id="error_submit"></div>
       </form>
+
+      <LeftColumn />
+      <MainInfromation />
     </div>
   </div>
 </template>
 
 <style lang="scss">
-.invalid {
-  border-color: red;
-}
-
-#error_name,
-#error_surname,
-#error_phone {
-  color: red;
-  text-align: right;
-  font-size: 15px;
-  border-color: red;
-}
-
 h1,
 h2,
 h3,
